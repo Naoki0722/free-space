@@ -20,7 +20,7 @@ const PostTitle = () => {
 
 export const PostList = () => (
   <List>
-    <Datagrid rowClick="edit">
+    <Datagrid rowClick="show">
       <TextField source="id" />
       <ReferenceField source="userId" reference="users" />
       <TextField source="title" />
