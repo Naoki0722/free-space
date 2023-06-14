@@ -91,6 +91,10 @@ GEM
     erubi (1.10.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    graphiql-rails (1.9.0)
+      railties
+      sprockets-rails
+    graphql (2.0.22)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.0.3)
@@ -136,6 +140,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.3)
+    rack-cors (2.0.1)
+      rack (>= 2.0.0)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (7.0.2.4)
@@ -214,10 +220,13 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  graphiql-rails
+  graphql
   importmap-rails
   jbuilder
   mysql2 (~> 0.5)
   puma (~> 5.0)
+  rack-cors
   rails (~> 7.0.2, >= 7.0.2.4)
   selenium-webdriver
   sprockets-rails
@@ -228,7 +237,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.1.2p20
+   ruby 3.1.4p223
 
 BUNDLED WITH
    2.3.7
