@@ -1,13 +1,26 @@
-import React from 'react'
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
 import ReactDOM from 'react-dom'
-import './index.css'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import App from './App'
+import './index.css'
 import reportWebVitals from './reportWebVitals'
 
+const router = createBrowserRouter([
+  {
+    path: '/*',
+    element: <App />,
+  },
+])
+
+const client = new ApolloClient({
+  uri: 'http://localhost:3000/graphql',
+  cache: new InMemoryCache(),
+})
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <ApolloProvider client={client}>
+    <RouterProvider router={router} />
+  </ApolloProvider>,
   document.getElementById('root')
 )
 
